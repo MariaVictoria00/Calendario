@@ -1,45 +1,51 @@
-*{
+*{ 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: gray;
+    color: #615b5e;   
 }
 
 html{
     font-size: 62.5%;
-    
-    
 }
+
 .container{
     width: 100%;
     height: 100vh;
-    background-color: #DCDCDC ;
+    background-color: #00000d;
+    
     display: flex;
     justify-content: center;
-    align-items: center;
-   
+    align-items: center;    
 }
+
 
 .calendario{
     width: 45rem;
     height: 52rem;
-    background-color: 	#F8F8FF;
-    box-shadow: 0 0.5 rem 3rem rgba((0,0,0,0,4), green, blue, alpha);
+    background-color: 	#ededdd;
+  
+    border-radius: 10px;    
 }
+
 .mes{
     width: 100%;
     height: 12rem;
-    background-color: #4682B4;
+    background-color: #0061c2;
+    border-radius: 10px 10px 0 0;   
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
     text-align: center;
-    text-shadow: 0 0.3rem 0.5rem rgba(0,0,0,0.5);
 }
+
 .mes i {
     font-size: 2.5rem;
     cursor: pointer;
+    color: thistle;
+    opacity: 0.7;
 }
 
 .mes h1{
@@ -48,10 +54,18 @@ html{
     text-transform: uppercase;
     letter-spacing: 0.2rem;
     margin-bottom: 1rem;
+    color: #e1def3;
+    cursor: not-allowed;
+    text-shadow: 0 0.3rem 0.5rem rgba(0,0,0,0.5);  
 }
 
 .mes p{
     font-size: 1.6rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #e1def3;
+    opacity: 0.8;
+    cursor: not-allowed;
+    text-shadow: 0 0.3rem 0.5rem rgba(0,0,0,0.5);
 }
 
 .dias-semana{
@@ -59,8 +73,9 @@ html{
     height: 5rem;
     padding: 0 0.4rem;
     display: flex;
-    align-items: center;
+    align-items: center;  
 }
+
 .dias-semana div{
     font-size: 1.5rem;
     font-weight: 400;
@@ -68,10 +83,10 @@ html{
     width: calc(44.2rem/7);
     display: flex;
     justify-content: center;
-    align-items: center;
+  
     text-shadow: 0 0.3rem 0.5rem rgba(0,0,0,0.5);
-
 }
+
 .dias{
     width:100%;
     display: flex;
@@ -92,18 +107,24 @@ html{
 }
 
 .dias div:hover:not(.hoje){
-    background-color: saddlebrown;
-    border: 0.2rem solid #777;
+    background-color: #2b6dc9 ;
+    
+    border: 0.1rem solid gainsboro;
+    border-radius: 10px;
     cursor: pointer;
 }
 
-
 .dia-anterior,
 .proximo-dia{
-    opacity: 0.5;
+    opacity: 0.6;
 }
 
 .hoje{
-    background-color: royalblue;
+    background-color: #0061c2;
+    border-radius: 10px;
+    font-weight: bolder;
 }
 
+.feriado{
+    color: yellow;
+}
