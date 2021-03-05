@@ -5,13 +5,21 @@ const calendario=()=>{
     //Inicializa mes 
     data.setDate(1);
 
-    //variaveis para controle de dia atual, anterior e futuro
-    const diasDoMes = document.querySelector('.dias');
+    //variaveis para controle de dia atual, anterior e futuro[]
+    const diasDoMes = document.querySelector('.dias'); 
     const ultimoDia = new Date(data.getFullYear(),data.getMonth()+1,0).getDate();
     const proxUltimoDia = new Date(data.getFullYear(),data.getMonth(),0).getDate();
     const primeiroDia = data.getDay();
     const proxUltimoDiaIndex = new Date(data.getFullYear(),data.getMonth()+1,0).getDay();
-    const diasProximos = 7-proxUltimoDiaIndex-1;
+
+    //ajustar
+    var  diasProximos = 0;
+    if(proxUltimoDia>32){
+         diasProximos =7-proxUltimoDiaIndex-1;
+    }else{
+        
+        diasProximos =14-proxUltimoDiaIndex-1;
+    }
     
 
     //declaracão dos meses 
@@ -45,12 +53,11 @@ const calendario=()=>{
 
     //controle do dia atual 
     for(let i=1; i<=ultimoDia; i++){
-        if(i== new Date().getDate() && data.getMonth()==new Date().getMonth()){
+        if(i== new Date().getDate() && data.getMonth()==new Date().getMonth() && data.getFullYear()==new Date().getFullYear() ){
             dias+= `<div class="hoje">${i}</div>`;
-        
-        }else{
+        }
+        else{
             dias+= `<div>${i}</div>`;
-        
         }
         
     }
@@ -65,16 +72,15 @@ const calendario=()=>{
 
 
 // evento para ir para o mes anterior 
-document.querySelector('.antes').addEventListener('click',()=>{
+document.querySelector('.prev').addEventListener('click',()=>{
     data.setMonth(data.getMonth()-1);
     calendario();
     
 });
 
 
-
 // evento para passar para o proximo mes 
-document.querySelector('.proximo').addEventListener('click',()=>{
+document.querySelector('.next').addEventListener('click',()=>{
     data.setMonth(data.getMonth()+1);
     calendario();
 });
